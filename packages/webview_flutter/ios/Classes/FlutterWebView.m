@@ -94,6 +94,7 @@
     _webView = [[FLTWKWebView alloc] initWithFrame:frame configuration:configuration];
     _navigationDelegate = [[FLTWKNavigationDelegate alloc] initWithChannel:_channel];
     _webView.UIDelegate = self;
+    _webView.allowsLinkPreview = false;
     _webView.navigationDelegate = _navigationDelegate;
     __weak __typeof__(self) weakSelf = self;
     [_channel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
